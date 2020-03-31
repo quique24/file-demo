@@ -1,5 +1,7 @@
 {
   "name": "file-demo",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

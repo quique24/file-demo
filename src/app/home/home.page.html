@@ -13,8 +13,39 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="ion-padding">
+    <ion-label>Images
+    </ion-label>
+
+    <h3 *ngIf="images.length === 0" text-center class="ion-padding-top">Please select an image</h3>
+    <ion-list class="ion-padding-top">
+      <ion-item *ngFor="let img of images; index as pos" text-wrap>
+        <ion-thumbnail slot="start">
+          <ion-img [src]="img"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          Image {{pos + 1}}
+        </ion-label>
+        <!-- <ion-button slot="end" fill="clear" (click)="startUpload()">
+          <ion-icon slot="icon-only" name="cloud"></ion-icon>
+        </ion-button> -->
+        <ion-button slot="end" fill="clear" (click)="deleteImage(img, pos)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+    <div text-center>
+      <ion-button (click)="selectImage()">
+        <ion-icon name="camera" slot="start"></ion-icon>
+        Select image
+      </ion-button>
+    </div>
+    <!-- <div text-center>
+      <ion-button (click)="startUpload()">
+        Upload
+      </ion-button>
+    </div>-->
+
   </div>
 </ion-content>

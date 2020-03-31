@@ -1,0 +1,11 @@
+{
+  "appId": "com.filedemo.app",
+  "appName": "file-demo",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {},
+  "server": {
+    "url": "http://localhost:8100"
+  }
+}
